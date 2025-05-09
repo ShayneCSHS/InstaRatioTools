@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from 'react';
 import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css'; // Import Cropper.js CSS
