@@ -1,9 +1,9 @@
-import AspectRatioCalculator from "@/components/AspectRatioCalculator";
+import RatioTool from "@/components/RatioTool";
 
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <AspectRatioCalculator />
+      <RatioTool />
     </main>
   );
 }
