@@ -74,7 +74,7 @@ const AspectRatioCalculator: React.FC = () => {
   };
 
   const handleProcessImage = () => {
-    if (!cropperRef.current) return;
+    if (!cropperRef.current || !imgRef.current?.src) return;
 
     // Get the cropped canvas data
     const croppedCanvas = cropperRef.current.getCroppedCanvas();
@@ -118,7 +118,6 @@ const AspectRatioCalculator: React.FC = () => {
           <input
             type="file"
             id="imageUpload"
-            ref={fileInputRef}
             accept="image/*"
             onChange={handleImageUpload}
             className="block w-full text-sm text-gray-300 file:mr-4 file:py-3 file:px-6 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-pink-500 file:text-white hover:file:bg-pink-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -130,7 +129,7 @@ const AspectRatioCalculator: React.FC = () => {
             <h2 className="text-xl font-semibold text-gray-200 mb-4">2. Crop & Select Ratio</h2>
             <div className="mb-6 h-96 flex justify-center items-center bg-gray-700 rounded-md overflow-hidden">
               {/* Image will be rendered here by Cropper.js */}
-              <img ref={imgRef} src={uploadedImage} alt="Uploaded preview" style={{ display: 'block', maxWidth: '100%', maxHeight: '100%' }} />
+              <img ref={imgRef} src={uploadedImage} alt="Uploaded preview" style={{ display: 'block', maxWidth: '100%' }} />
             </div>
             
             <label htmlFor="aspectRatioSelect" className="block text-lg font-medium text-gray-200 mb-2">
